@@ -1,6 +1,7 @@
 #include "main.h"
 /**
 * print_alphabet - print all alphabet in lowercase
+* Returns: has nno return value
 */
 void print_alphabet(void)
 {
@@ -9,5 +10,5 @@ void print_alphabet(void)
 	{
 		_putchar(letter);
 	}
-		_putchar('\n');
+	_putchar('\n');
 }
