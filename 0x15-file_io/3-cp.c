@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * errors_file - check for errors
  * @file_from: file to copy
@@ -10,12 +11,12 @@ void errors_file(int file_from, int file_to, char *argv[])
 {
 	if (file_from == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1])
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	if (file_to == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2])
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 }
@@ -38,7 +39,7 @@ int main(int argc, char *argv[])
 		}
 	file_from = open(argv[1], O_RDONLY);
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_APPEND | O_TRUNC, 0664);
-	errors_file(file_from, file_to, argv[]);
+	errors_file(file_from, file_to, argv);
 	nchars = 1024;
 
 	while(nchars == 1024)
