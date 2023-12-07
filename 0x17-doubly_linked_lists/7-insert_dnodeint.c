@@ -8,17 +8,14 @@
   */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new;
-	dlistint_t *current;
-	unsigned int a;
+	dlistint_t *new = NULL;
+	dlistint_t *current = *h;
+	unsigned int a = 1;
 
-	new = NULL;
 	if (idx == 0)
 		new = add_dnodeint(h, n);
 	else
 	{
-		current = *h;
-		a = 1;
 		if (current != NULL)
 			while (current->prev != NULL)
 				current = current->prev;
